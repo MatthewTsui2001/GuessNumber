@@ -8,15 +8,13 @@ public class GuessTheNumber{
       
       //asking user to input amount of attempts they want
       do{
-         System.out.println("Enter the amount of attempts you wish to have: ");
+         System.out.print("Enter the amount of attempts you wish to have: ");
+         
          //verifying that a valid input is added
-         if(input.hasNextInt())
-            counter= input.nextInt();
-         else{
-            input.next();
-         }
+         counter=verifyValue();
+         
          if(counter<1 || counter>10)
-            System.out.println("Please enter a valid input");
+            System.out.println("Please enter a valid input \n");
       }while(counter<1 || counter>10);
       
       //Generating the value for the user to guess
@@ -25,26 +23,24 @@ public class GuessTheNumber{
       //giving the user k attempts to guess the number
       while(counter>0){
          counter--;
+         
          //keeping the guess inside the parameters
          do{
             
             //asking the user to input their guess 
             System.out.print("Please Enter Your Guess from 1-100: ");
-            if(input.hasNextInt())
-                inputNum = input.nextInt();
-            else
-                input.next();
+            inputNum=verifyValue();
             if(inputNum>100 || inputNum<1)
-               System.out.println("Invalid Input: Please enter a number between 1-100");
+               System.out.println("Invalid Input: Please enter a number between 1-100 \n");
          }while(inputNum>100 || inputNum<1);
          
          //verifying if the guess was correct
          String outcome = CheckNum(computerNum, inputNum);
          System.out.println(outcome);
          
-         //breaks out of loop if guess was correct
+         
          if(outcome.equals("Your guess was correct"))
-            break;
+            break;//breaks out of loop if guess was correct
          
          //informing the user of their attempts remaining
          System.out.println("You have " + counter + " more attempts \n");
@@ -63,5 +59,15 @@ public class GuessTheNumber{
          return "Your guess was higher than the number";
       else
          return "Your guess was correct";
+   }
+   
+   public static int verifyValue(){
+      Scanner input = new Scanner(System.in);
+      if(input.hasNextInt())
+            return input.nextInt();
+      else
+         input.next();
+      return 0;
+         
    }
 }
