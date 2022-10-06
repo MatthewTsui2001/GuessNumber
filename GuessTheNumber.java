@@ -34,11 +34,10 @@ public class GuessTheNumber{
          }while(inputNum>100 || inputNum<1);
          
          //verifying if the guess was correct
-         String outcome = CheckNum(computerNum, inputNum);
-         System.out.println(outcome);
+         System.out.println(CheckNum(computerNum, inputNum));
          
          
-         if(outcome.equals("Your guess was correct"))
+         if(CheckNum(computerNum, inputNum).equals("Your guess was correct"))
             break;//breaks out of loop if guess was correct
          
          //informing the user of their attempts remaining
