@@ -6,7 +6,7 @@ public class GuessTheNumber{
       counter=0;
       
       //asking user to input amount of attempts they want
-      while(counter<1 || counter>10)
+      while(counter<1 || counter>10){
          System.out.print("Enter the amount of attempts you wish to have: ");
          
          //verifying that a valid input is added
