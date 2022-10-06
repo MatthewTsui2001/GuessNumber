@@ -3,8 +3,21 @@ public class GuessTheNumber{
    public static void main(String[] args){
       Scanner input = new Scanner(System.in);
       int computerNum,
-      inputNum,
-      counter=5;
+      inputNum=0,
+      counter;
+      
+      //asking user to input amount of attempts they want
+      do{
+         System.out.println("Enter the amount of attempts you wish to have: ");
+         //verifying that a valid input is added
+         if(input.hasNextInt())
+            counter= input.nextInt();
+         else{
+            input.next();
+         }
+         if(counter<1 || counter>10)
+            System.out.println("Please enter a valid input");
+      }while(counter<1 || counter>10);
       
       //Generating the value for the user to guess
       computerNum= (int)(Math.random()*100)+1;
