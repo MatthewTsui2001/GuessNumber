@@ -4,7 +4,7 @@ public class GuessTheNumber{
       Scanner input = new Scanner(System.in);
       int computerNum,
       inputNum=0,
-      counter;
+      counter=0;
       
       //asking user to input amount of attempts they want
       do{
