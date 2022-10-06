@@ -1,13 +1,12 @@
 import java.util.Scanner;
 public class GuessTheNumber{
    public static void main(String[] args){
-      Scanner input = new Scanner(System.in);
       int computerNum,
       inputNum=0,
       counter=0;
       
       //asking user to input amount of attempts they want
-      do{
+      while(counter<1 || counter>10)
          System.out.print("Enter the amount of attempts you wish to have: ");
          
          //verifying that a valid input is added
@@ -15,7 +14,7 @@ public class GuessTheNumber{
          
          if(counter<1 || counter>10)
             System.out.println("Please enter a valid input \n");
-      }while(counter<1 || counter>10);
+      }
       
       //Generating the value for the user to guess
       computerNum= (int)(Math.random()*100)+1;
@@ -65,8 +64,6 @@ public class GuessTheNumber{
       Scanner input = new Scanner(System.in);
       if(input.hasNextInt())
             return input.nextInt();
-      else
-         input.next();
       return 0;
          
    }
