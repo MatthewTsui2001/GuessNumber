@@ -17,7 +17,10 @@ public class GuessTheNumber{
             
             //asking the user to input their guess 
             System.out.print("Please Enter Your Guess from 1-100: ");
-            inputNum=input.nextInt();
+            if(input.hasNextInt())
+                inputNum = input.nextInt();
+            else
+                input.next();
             if(inputNum>100 || inputNum<1)
                System.out.println("Invalid Input: Please enter a number between 1-100");
          }while(inputNum>100 || inputNum<1);
