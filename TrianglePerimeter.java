@@ -16,17 +16,17 @@ public class TrianglePerimeter{
             do{
                 //asking user to input the coordinates of the triangle
                 System.out.print("Please enter the x-coordinate of point1:");
-                point1_x=input.nextInt();
+                point1_x=input.nextDouble();
                 System.out.print("Please enter the y-coordinate of point1:");
-                point1_y=input.nextInt();
+                point1_y=input.nextDouble();
                 System.out.print("Please enter the x-coordinate of point2:");
-                point2_x=input.nextInt();
+                point2_x=input.nextDouble();
                 System.out.print("Please enter the y-coordinate of point2:");
-                point2_y=input.nextInt();
+                point2_y=input.nextDouble();
                 System.out.print("Please enter the x-coordinate of point3:");
-                point3_x=input.nextInt();
+                point3_x=input.nextDouble();
                 System.out.print("Please enter the y-coordinate of point3:");
-                point3_y=input.nextInt();
+                point3_y=input.nextDouble();
                 
                 //verifying if inputs are valid
                 if(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false){
