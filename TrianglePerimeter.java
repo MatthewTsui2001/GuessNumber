@@ -1,6 +1,6 @@
 import java.util.Scanner;
-public class Main{
-    public static void Triangle Perimeter(String[] args) {
+public class TrianglePerimeter{
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double point1_x,
         point1_y,
