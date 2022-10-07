@@ -56,21 +56,34 @@ public class TrianglePerimeter{
         side_2and3,
         side_3and1,
         perimeter;
+        
+        //computing the length of the sides of the triangle
         side_1and2=Math.sqrt(Math.pow((point2_x-point1_x),2)+ Math.pow((point2_y-point1_y),2));
         side_2and3=Math.sqrt(Math.pow((point3_x-point2_x),2)+ Math.pow((point3_y-point2_y),2));
         side_3and1=Math.sqrt(Math.pow((point3_x-point1_x),2)+ Math.pow((point3_y-point1_y),2));
+        
+        //calculating the perimeter and returning the value
         perimeter=side_1and2+side_2and3+side_3and1;
         return perimeter;
     }
+    
     public static boolean verify_input(double point1_x, double point1_y, double point2_x, double point2_y, double point3_x, double point3_y){
+        //checking if a negative number was inputted
         if(point1_x<0 || point1_y<0|| point2_x<0 || point2_y<0 || point3_x<0 || point3_y<0)
             return false;
+        
+        //checking if the coordinates are larger than 40
         else if(point1_x>40 || point1_y>40|| point2_x>40 || point2_y>40 || point3_x>40 || point3_y>40)
             return false;
+        
+        //checking if the x coordinates are the same for all three points
         else if(point1_x == point2_x && point1_x == point3_x)
             return false;
+        
+        //checking if the y coordinates are the same for all three points
         else if(point1_y == point2_y && point1_y == point3_y)
             return false;
+        //otherwise its a valid input
         else 
         return true;
             
