@@ -9,7 +9,7 @@ public class Main{
         point3_x,
         point3_y,
         perimeter;
-        //String answer;
+        String answer;
         boolean redo=true,
         valid = true;
         while(redo==true){
@@ -36,7 +36,7 @@ public class Main{
             perimeter=calculatePerimeter(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y);
             System.out.println("The perimeter is "+ perimeter);
             System.out.println("Would you like to repeat the program?");
-            String answer=input.next();
+            answer=input.next();
             
             if(answer.equals("NO") || answer.equals("No") || answer.equals("no") || answer.equals("nO"))
                 redo=false;
@@ -46,14 +46,14 @@ public class Main{
         System.out.println("End of the program");
     }
     public static double calculatePerimeter(double point1_x, double point1_y, double point2_x,double point2_y, double point3_x, double point3_y){
-        double ab,
-        bc,
-        ca,
+        double side_1and2,
+        side_2and3,
+        side_3and1,
         perimeter;
-        ab=Math.sqrt(Math.pow((point2_x-point1_x),2)+ Math.pow((point2_y-point1_y),2));
-        bc=Math.sqrt(Math.pow((point3_x-point2_x),2)+ Math.pow((point3_y-point2_y),2));
-        ca=Math.sqrt(Math.pow((point3_x-point1_x),2)+ Math.pow((point3_y-point1_y),2));
-        perimeter=ab+bc+ca;
+        side_1and2=Math.sqrt(Math.pow((point2_x-point1_x),2)+ Math.pow((point2_y-point1_y),2));
+        side_2and3=Math.sqrt(Math.pow((point3_x-point2_x),2)+ Math.pow((point3_y-point2_y),2));
+        side_3and1=Math.sqrt(Math.pow((point3_x-point1_x),2)+ Math.pow((point3_y-point1_y),2));
+        perimeter=side_1and2+side_2and3+side_3and1;
         return perimeter;
     }
     public static boolean verify_input(double point1_x, double point1_y, double point2_x, double point2_y, double point3_x, double point3_y){
