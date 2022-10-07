@@ -28,9 +28,9 @@ public class TrianglePerimeter{
                 System.out.print("Please enter the y-coordinate of point3:");
                 point3_y=input.nextDouble();
                 
-                //verifying if inputs are valid
+                //Printing out potential error messsages for invalid inputs
                 if(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false){
-                    System.out.println("\n Error: Invalid input \n 1. x and y coordinates need to be positve values \n 2. x and y coordinates need too be smaller than 40 \n 3. Coordinates need to make a triangle (All three x or all three y coordinates can not be the same \n");
+                    System.out.println("\n" + errorMessage(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y) + "\n");
                 }
             }while(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false); // continued until a valid input is inputted
             
@@ -47,6 +47,8 @@ public class TrianglePerimeter{
                 redo=false;
             else if(answer.equals("YES") || answer.equals("YEs") || answer.equals("Yes") || answer.equals("yes") || answer.equals("yES") || answer.equals("yeS") || answer.equals("yEs") || answer.equals("YeS"))
                 redo=true;
+            else
+                redo=false;
         }
         System.out.println("End of the program");
     }
@@ -87,6 +89,25 @@ public class TrianglePerimeter{
         else 
         return true;
             
+    }
+    
+    public static String errorMessage(double point1_x, double point1_y, double point2_x, double point2_y, double point3_x, double point3_y){
+        //checking if a negative number was inputted
+        if(point1_x<0 || point1_y<0|| point2_x<0 || point2_y<0 || point3_x<0 || point3_y<0)
+            return "Error: points can not be a negative";
+        
+        //checking if the coordinates are larger than 40
+        else if(point1_x>40 || point1_y>40|| point2_x>40 || point2_y>40 || point3_x>40 || point3_y>40)
+            return "Error: points can not be larger than 40";
+        
+        //checking if the x coordinates are the same for all three points
+        else if(point1_x == point2_x && point1_x == point3_x)
+            return "Error: The points do not make a triangle";
+        
+        //checking if the y coordinates are the same for all three points
+        else if(point1_y == point2_y && point1_y == point3_y)
+            return "Error: The points do not make a triangle";
+        return "";
     }
     
 }
