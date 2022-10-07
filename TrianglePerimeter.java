@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main{
+public class TrianglePerimeter{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double point1_x,
@@ -11,8 +11,10 @@ public class Main{
         perimeter;
         String answer;
         boolean redo=true;
+        
         while(redo==true){
             do{
+                //asking user to input the coordinates of the triangle
                 System.out.print("Please enter the x-coordinate of point1:");
                 point1_x=input.nextInt();
                 System.out.print("Please enter the y-coordinate of point1:");
@@ -25,16 +27,22 @@ public class Main{
                 point3_x=input.nextInt();
                 System.out.print("Please enter the y-coordinate of point3:");
                 point3_y=input.nextInt();
+                
+                //verifying if inputs are valid
                 if(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false){
                     System.out.println("\n Error: Invalid input \n 1. x and y coordinates need to be positve values \n 2. x and y coordinates need too be smaller than 40 \n 3. Coordinates need to make a triangle (All three x or all three y coordinates can not be the same \n");
                 }
-            }while(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false);
+            }while(verify_input(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y)==false); // continued until a valid input is inputted
             
+            //printing out the traingles perimeter with the calculatePerimeter method
             perimeter=calculatePerimeter(point1_x, point1_y, point2_x, point2_y, point3_x, point3_y);
             System.out.println("The perimeter is "+ perimeter);
+            
+            //asking user if they would like to repeat the program
             System.out.println("Would you like to repeat the program?");
             answer=input.next();
             
+            //checking if answer is yes or no
             if(answer.equals("NO") || answer.equals("No") || answer.equals("no") || answer.equals("nO"))
                 redo=false;
             else if(answer.equals("YES") || answer.equals("YEs") || answer.equals("Yes") || answer.equals("yes") || answer.equals("yES") || answer.equals("yeS") || answer.equals("yEs") || answer.equals("YeS"))
@@ -42,6 +50,7 @@ public class Main{
         }
         System.out.println("End of the program");
     }
+    
     public static double calculatePerimeter(double point1_x, double point1_y, double point2_x,double point2_y, double point3_x, double point3_y){
         double side_1and2,
         side_2and3,
