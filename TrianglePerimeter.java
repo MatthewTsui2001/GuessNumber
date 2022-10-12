@@ -9,7 +9,7 @@ public class PrintTrianglePerimeter{
    /**
       **The program prints out the perimeter of a triangle
        */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
       double point1_x,
       point1_y,
@@ -83,7 +83,7 @@ public class PrintTrianglePerimeter{
       //calculating the perimeter and returning the value
       perimeter=side_1and2+side_2and3+side_3and1;
       return perimeter;
-    }
+   }
     
    /**
       ** CPSC1150
@@ -112,7 +112,7 @@ public class PrintTrianglePerimeter{
       else 
          return true;
             
-    }
+   }
     
    /**
       ** CPSC1150
@@ -137,7 +137,8 @@ public class PrintTrianglePerimeter{
       //checking if the y coordinates are the same for all three points
       else if(point1_y == point2_y && point1_y == point3_y)
          return "Error: The points do not make a triangle";
-      return "";
-    }
+      else
+         return "";
+   }
     
 }
