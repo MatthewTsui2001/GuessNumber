@@ -1,5 +1,14 @@
+/**
+**Program Name: TrianglePerimeter
+**Author: Matthew Tsui
+**Date: October 12th, 2022
+**Course: CPSC1150
+*/
 import java.util.Scanner;
 public class TrianglePerimeter{
+    /**
+    **The program prints out the perimeter of a triangle
+    */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         double point1_x,
@@ -53,6 +62,13 @@ public class TrianglePerimeter{
         System.out.println("End of the program");
     }
     
+    /**
+    ** CPSC1150
+    ** @param point1_x the x_coordinate of point 1, point1_y the y-coordinate of point 1, point2_x the x-coordinate of point 2, point2_y the y-coordinate of point 2, point3_x the x-coordinate of point 3, point3_y the y-coordinate of point 3.
+    ** @return perimeter.
+    ** precondition: point1_x, point1_y, point2_x, point2_y, point3_x, point3_y is declared in the calling function.
+    ** postcondition: perimeter will need a double variable to be assigned to.
+    */
     public static double calculatePerimeter(double point1_x, double point1_y, double point2_x,double point2_y, double point3_x, double point3_y){
         double side_1and2,
         side_2and3,
@@ -69,6 +85,13 @@ public class TrianglePerimeter{
         return perimeter;
     }
     
+    /**
+    ** CPSC1150
+    ** @param point1_x the x_coordinate of point 1, point1_y the y-coordinate of point 1, point2_x the x-coordinate of point 2, point2_y the y-coordinate of point 2, point3_x the x-coordinate of point 3, point3_y the y-coordinate of point 3.
+    ** @return true or false.
+    ** precondition: point1_x, point1_y, point2_x, point2_y, point3_x, point3_y is declared in the calling function.
+    ** postcondition: true or false will need a boolean variable to be stored in.
+    */
     public static boolean verify_input(double point1_x, double point1_y, double point2_x, double point2_y, double point3_x, double point3_y){
         //checking if a negative number was inputted
         if(point1_x<0 || point1_y<0|| point2_x<0 || point2_y<0 || point3_x<0 || point3_y<0)
@@ -91,6 +114,13 @@ public class TrianglePerimeter{
             
     }
     
+    /**
+    ** CPSC1150
+    ** @param point1_x the x_coordinate of point 1, point1_y the y-coordinate of point 1, point2_x the x-coordinate of point 2, point2_y the y-coordinate of point 2, point3_x the x-coordinate of point 3, point3_y the y-coordinate of point 3.
+    ** @return error message.
+    ** precondition: point1_x, point1_y, point2_x, point2_y, point3_x, point3_y is declared in the calling function.
+    ** postcondition: The type of error will be displayed on the screen.
+    */
     public static String errorMessage(double point1_x, double point1_y, double point2_x, double point2_y, double point3_x, double point3_y){
         //checking if a negative number was inputted
         if(point1_x<0 || point1_y<0|| point2_x<0 || point2_y<0 || point3_x<0 || point3_y<0)
