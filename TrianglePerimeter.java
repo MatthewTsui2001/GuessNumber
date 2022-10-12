@@ -7,8 +7,8 @@
 import java.util.Scanner;
 public class PrintTrianglePerimeter{
    /**
-      **The program prints out the perimeter of a triangle
-       */
+   **The program prints out the perimeter of a triangle
+   */
    public static void main(String[] args) {
       Scanner input = new Scanner(System.in);
       //points of the triangle
